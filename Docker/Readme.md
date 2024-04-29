@@ -1,4 +1,4 @@
-# Master Thesis ~ Nerf
+# Docker and Environment setup
 
 ## Installation & Setup
 Before installing, ensure that your system has NVIDIA GPU and its drivers installed.
