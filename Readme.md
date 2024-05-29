@@ -1,5 +1,9 @@
 # Master Thesis ~ Nerf
 
+More info like the working and its input and the interactive output can be found [here](https://sivadineshponrajan.github.io/masterthesis/).
+
+![Workflow](https://sivadineshponrajan.github.io/masterthesis/model/dynamic/dynamicflow.jpeg)
+
 ## Installation & Setup
 
 A Dockerfile and installation instructions are provided in the [Docker](Docker/) directory. 
@@ -42,3 +46,27 @@ rosrun image_publisher image_publisher.py -h
 > * Ensure that the camera is calibrated before using the image publisher or a rosbag.
 > * The camera's intrinsic parameters are crucial for the subsequent steps.
 > * In the case of Mono-Inertial data(video with IMU), [Kalibr visual-intertial calibration](https://github.com/ethz-asl/kalibr) could be used for calibration.
+
+---
+
+## Orb_Slam3_ROS
+
+Already the camera configurations used for my camera is added to the repository. 
+> **__NOTE__**: When cloning this git repository, init and clone it with the submodules.
+
+
+The following command will launch the instance.
+```bash
+roslaunch orb_slam3_ros iphone.launch
+```
+
+---
+
+## NerfBridge
+
+The official repository is forked and modified according to the Nerfstudio method template structure.
+
+Once all the installation is followed from the Readme.md from the NerfBridge repository, the following command starts the training.
+```bash
+ns-train ros_nerfacto --data iphone.json --pipeline.datamanager.data_update_freq 30.0 --viewer.websocket-port 1234
+```
