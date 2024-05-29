@@ -63,3 +63,13 @@ ns-download-data nerfstudio --capture-name=dozer
 # Train model 
 ns-train nerfacto --data data/nerfstudio/dozer 
 ```
+## SSH Setup and Installation
+
+```bash
+sudo apt install openssh-server
+mkdir /var/run/sshd
+echo 'root:pencil' | chpasswd
+sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+sudo service ssh restart
+service ssh status
+```
